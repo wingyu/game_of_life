@@ -6,6 +6,7 @@ module GameOfLife
 
     it "only has 0 cells left" do
       game.seed_life([1,1])
+      game.start_life
 
       expect(game.grid.live_cell_count).to eq 0
     end
