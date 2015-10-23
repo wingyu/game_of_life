@@ -10,7 +10,7 @@ module GameOfLife
     def create_board(size)
       Array.new(size) do |row|
         Array.new(size) do |col|
-          Cell.new(col, row)
+          Cell.new(x: col, y: row)
         end
       end
     end
