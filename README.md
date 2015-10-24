@@ -1,3 +1,4 @@
+#WIP
 # GameOfLife
 
 TODO: Write a gem description
