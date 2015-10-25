@@ -17,11 +17,6 @@ World
     NORTH = [1, 1]
     SOUTH = [1,-1] ...etc
     ]
-  board = Array.new(3) do |row|
-            Array.new(3) do |col|
-              Cell.new(col, row)   <----this will need experimenation
-            end
-          end
 
   def valid?
 
@@ -57,28 +52,5 @@ Game
 ----------------------------------------------
 
 Cell
-  attr_accessor :y, :x
-  @live_neighbours = 0
-  @live = false
 
-  def react!
-    if alive
-      if live_neighbours >3 || <2
-        DIE!
-    else
-      if live_neighbours ==3
-        LIVE!
-    end
-  end
-
-  def live?
-  end
-
-  def dead?
-
-  def die!
-  end
-
-  def live!
-  end
 =end
