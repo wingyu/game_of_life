@@ -19,9 +19,29 @@ module GameOfLife
       end
     end
 
-    describe "#count_neighbours_for_cells" do
-      it "informs a cell of the presence of live neighbours" do
-       #expect(world.board[1][1].live_neighbours).to eq 1
+    describe "#count_live_neighbours_for_cells" do
+        before do
+          neighbouring_cell = world.board_cell(x: 2, y: 2)
+
+          neighbouring_cell.live!
+
+          world.count_live_neighbours_for_cells
+        end
+
+      context "count for cell with only valid neighbouts" do
+        it "informs a cell of the presence of live neighbours" do
+          cell = world.board_cell(x: 1, y: 1)
+
+          expect(cell.live_neighbours).to eq 1
+        end
+      end
+
+      context "count for cell with some invalid neighbours" do
+        it "informs a cell of the presence of live neighbours" do
+          cell = world.board_cell(x: 0, y: 0)
+
+          expect(cell.live_neighbours).to eq 0
+        end
       end
     end
   end
