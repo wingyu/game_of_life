@@ -6,6 +6,10 @@ module GameOfLife
       @board = create_board(size)
     end
 
+    def board_cell(x:,y:)
+      @board[y][x]
+    end
+
     private
     def create_board(size)
       Array.new(size) do |row|
