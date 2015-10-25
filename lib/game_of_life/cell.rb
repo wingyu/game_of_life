@@ -1,6 +1,6 @@
 module GameOfLife
   class Cell
-    attr_accessor :x, :y, :live_neighbours
+    attr_reader :x, :y, :live_neighbours
 
     def initialize(x:, y:)
       @x = x
@@ -15,7 +15,7 @@ module GameOfLife
       @alive = true
     end
 
-    def react
+    def react!
       if good_conditions?
         live!
       elsif bad_conditions?
