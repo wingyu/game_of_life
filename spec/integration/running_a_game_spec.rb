@@ -2,15 +2,30 @@ require "spec_helper"
 
 module GameOfLife
   describe "Runs the Game of Life with applied rules" do
-    let(:game) { GameOfLife::Game.new(turns: 1, board_size:3) }
-    let(:seeds) { [[1,1]] }
-    let(:seeded_cell) { game.world.board_cell(x: 1,y: 1) }
+    let(:game) { GameOfLife::Game.new(turns: 2, board_size:3) }
 
-    before do
-      game.seed_life(seeds)
-      game.start_life
+    context "Introducing a Blinker into the world" do
+      let(:seeds) { [[1,0],[1,1],[1,2]] }
+      before do
+        game.seed_life(seeds)
+        game.start_life
+      end
+
+      it "should still be alive by end of second generation" do
+        aggregate_failures do
+          expect(
+            game.world.board_cell(x: 1, y: 0).alive?
+          ).to eq true
+
+          expect(
+            game.world.board_cell(x: 1, y: 1).alive?
+          ).to eq true
+
+          expect(
+            game.world.board_cell(x: 1, y: 2).alive?
+          ).to eq true
+        end
+      end
     end
-
-    it { expect(seeded_cell.alive?).to eq false }
   end
 end
