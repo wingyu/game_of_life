@@ -20,13 +20,11 @@ module GameOfLife
     end
 
     describe "#count_live_neighbours_for_cells" do
-        before do
-          neighbouring_cell = world.board_cell(x: 2, y: 2)
-
-          neighbouring_cell.live!
-
-          world.count_live_neighbours_for_cells
-        end
+      before do
+        neighbouring_cell = world.board_cell(x: 2, y: 2)
+        neighbouring_cell.live!
+        world.count_live_neighbours_for_cells
+      end
 
       context "count for cell with only valid neighbouts" do
         it "informs a cell of the presence of live neighbours" do

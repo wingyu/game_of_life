@@ -3,13 +3,14 @@ require "spec_helper"
 module GameOfLife
   describe "Runs the Game of Life with applied rules" do
     let(:game) { GameOfLife::Game.new(turns: 1, board_size:3) }
+    let(:seeds) { [[1,1]] }
+    let(:seeded_cell) { game.world.board_cell(x: 1,y: 1) }
 
-    it "only has 0 cells left" do
-      game.seed_life([1,1])
+    before do
+      game.seed_life(seeds)
       game.start_life
-
-      expect(game.grid.live_cell_count).to eq 0
     end
+
+    it { expect(seeded_cell.alive?).to eq false }
   end
 end
-
