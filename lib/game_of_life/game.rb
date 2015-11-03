@@ -27,14 +27,18 @@ module GameOfLife
 
     def start_life
       unless turns.nil?
-        turns.times do
-          next_generation
-        end
+        turns.times { tick! }
       else
-        loop do
-          next_generation
-        end
+        loop { tick! }
       end
+    end
+
+    private
+
+    def tick!
+      world.print
+
+      next_generation
     end
   end
 end

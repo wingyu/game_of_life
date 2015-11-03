@@ -29,6 +29,15 @@ module GameOfLife
       end
     end
 
+    def print
+      board.each do |row|
+        puts row.map { |cell| cell.alive? ? '@' : '_' }.join(' ')
+      end
+
+      barrier = "-" * size * 10
+      puts "\n\n #{barrier}"
+    end
+
     private
 
     def create_board
