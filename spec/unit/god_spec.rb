@@ -1,7 +1,7 @@
 require "spec_helper"
 
-describe GameOfLife::Game do
-  let(:game) { GameOfLife::Game.new(turns: 1, board_size: 3) }
+describe GameOfLife::God do
+  let(:game) { described_class.new(turns: 1, board_size: 3) }
   let(:seeds) { [[1,1]] }
   let(:seeded_cell) { game.world.board_cell(x: 1,y: 1) }
 

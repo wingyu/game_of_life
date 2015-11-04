@@ -1,5 +1,5 @@
 module GameOfLife
-  class Game
+  class God
     attr_reader :world, :turns
 
     def initialize(turns: nil, board_size:)
@@ -26,17 +26,17 @@ module GameOfLife
     end
 
     def start_life
-      unless turns.nil?
-        turns.times { tick! }
-      else
+      if turns.nil?
         loop { tick! }
+      else
+        turns.times { tick! }
       end
     end
 
     private
 
     def tick!
-      world.print
+      world.print_board
 
       next_generation
     end
