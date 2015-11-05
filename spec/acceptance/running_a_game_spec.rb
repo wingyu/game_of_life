@@ -6,8 +6,10 @@ describe "Conway's Game of Life" do
 
   context "introducing a Blinker into the world" do
     let(:seeds) { [[1,0],[1,1],[1,2]] }
+
     before do
       god.seed_life(seeds)
+
       god.start_life
     end
 
