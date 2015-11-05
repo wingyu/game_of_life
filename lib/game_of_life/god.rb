@@ -1,9 +1,7 @@
 module GameOfLife
   class God
-    attr_reader :world, :turns
-
-    def initialize(turns: nil, board_size:)
-      @world = World.new(size: board_size)
+    def initialize(turns: nil, world:)
+      @world = world 
       @turns = turns
     end
 
@@ -34,6 +32,7 @@ module GameOfLife
     end
 
     private
+    attr_reader :world, :turns
 
     def tick!
       world.print_board

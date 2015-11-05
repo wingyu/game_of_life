@@ -1,27 +1,28 @@
 require "spec_helper"
 
-describe "Runs the Game of Life with applied rules" do
-  let(:game) { GameOfLife::God.new(turns: 2, board_size:3) }
+describe "Conway's Game of Life" do
+  let(:world) { GameOfLife::World.new(size: 3) }
+  let(:god) { GameOfLife::God.new(turns: 4, world: world) }
 
-  context "Introducing a Blinker into the world" do
+  context "introducing a Blinker into the world" do
     let(:seeds) { [[1,0],[1,1],[1,2]] }
     before do
-      game.seed_life(seeds)
-      game.start_life
+      god.seed_life(seeds)
+      god.start_life
     end
 
-    it "should still be alive by end of second generation" do
+    it "should still be alive by end of fourth generation" do
       aggregate_failures do
         expect(
-          game.world.board_cell(x: 1, y: 0).alive?
+          world.board_cell(x: 1, y: 0).alive?
         ).to eq true
 
         expect(
-          game.world.board_cell(x: 1, y: 1).alive?
+          world.board_cell(x: 1, y: 1).alive?
         ).to eq true
 
         expect(
-          game.world.board_cell(x: 1, y: 2).alive?
+          world.board_cell(x: 1, y: 2).alive?
         ).to eq true
       end
     end
