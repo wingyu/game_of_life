@@ -49,6 +49,7 @@ module GameOfLife
       end
     end
 
+    # TODO: change parameter to not be an array
     def valid?(new_space)
       true if new_space.all? {|coordinate| coordinate >= 0 && coordinate < size }
     end
