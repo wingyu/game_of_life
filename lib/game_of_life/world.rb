@@ -5,6 +5,7 @@ module GameOfLife
     def initialize(size:)
       @size = size
       @board = create_board
+      #Thinking about moving this out of initialize and set as a constant instead...
       @neighbour_coordinates = [
         [0, 1],
         [1, 1],
