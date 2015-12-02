@@ -12,15 +12,6 @@ describe GameOfLife::God do
     it { expect(seeded_cell.alive?).to eq true }
   end
 
-  describe "#next_generation" do
-    before do
-      god.seed_life(seeds)
-      god.next_generation
-    end
-
-     it { expect(seeded_cell.alive?).to eq false }
-  end
-
   describe "#start_life" do
     before do
       god.seed_life(seeds)

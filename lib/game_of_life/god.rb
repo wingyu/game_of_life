@@ -1,7 +1,7 @@
 module GameOfLife
   class God
     def initialize(turns: nil, world:)
-      @world = world 
+      @world = world
       @turns = turns
     end
 
@@ -13,15 +13,6 @@ module GameOfLife
       end
     end
 
-    def next_generation
-      world.count_live_neighbours_for_cells
-
-      world.board.each do |row|
-        row.each do |cell|
-          cell.react!
-        end
-      end
-    end
 
     def start_life
       if turns.nil?
@@ -38,6 +29,16 @@ module GameOfLife
       world.print_board
 
       next_generation
+    end
+
+    def next_generation
+      world.count_live_neighbours_for_cells
+
+      world.board.each do |row|
+        row.each do |cell|
+          cell.react!
+        end
+      end
     end
   end
 end
