@@ -19,7 +19,7 @@ To build and then run the test suite, enter this command:
 
     $ make build test
 
-Currently, This will only create a Blinker. Adding more life forms will involve updating the binary file
+Currently, this will only create a Blinker. Adding more life forms will involve updating the binary file
 
 ## The Rules
 1. Any live cell with fewer than two live neighbours dies, as if caused by under-population.
