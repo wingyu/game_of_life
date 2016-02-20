@@ -6,6 +6,20 @@ From Wikipedia...
 
 > The "game" is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves or, for advanced players, by creating patterns with particular properties.
 
+This is my implementation of the Conway's Game of Life. It is a Ruby 2.3 app running in Docker.
+
+## Usage
+
+To build and then run the image, enter this command:
+
+    $ make build run
+
+To build and then run the test suite, enter this command:
+
+    $ make build test
+
+Currently, This will only create a Blinker. Adding more life forms will involve updating the binary file
+
 ## The Rules
 1. Any live cell with fewer than two live neighbours dies, as if caused by under-population.
 2. Any live cell with two or three live neighbours lives on to the next generation.
