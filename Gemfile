@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+ruby '2.1.5'
 
-# Specify your gem's dependencies in game_of_life.gemspec
-gemspec
+gem "bundler", "~> 1.7"
+gem "rake", "~> 10.0"
+gem 'rspec'
