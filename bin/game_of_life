@@ -1,4 +1,6 @@
-require_relative '../lib/game_of_life.rb'
+#!/usr/bin/env ruby
+
+require './lib/game_of_life'
 
 seeds = [[1,0],[1,1],[1,2]]
 
