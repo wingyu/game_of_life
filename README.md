@@ -11,11 +11,11 @@ From Wikipedia...
 
 ## Usage
 
-To build and then run the image, enter this command:
+To build and then run the image:
 
     $ make build run
 
-To build and then run the test suite, enter this command:
+To build and then run the test suite:
 
     $ make build test
 
